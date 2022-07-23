@@ -1,1 +1,1 @@
-# azure-vm-terraform
+# Azure-VM-POC
