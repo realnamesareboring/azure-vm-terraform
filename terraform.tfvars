@@ -1,29 +1,54 @@
+#Tags
 environment_tag             = "AZVM-POC"
+function_tag1               = "region1-eastus2-hub"
+function_tag2               = "region1-eastus2-spoke"
+function_tag3               = "region1-vnet1-hub"
+function_tag4               = "region1-vnet1-spoke"
+function_tag5               = "region1-spoke-nsg"
+function_tag6               = "AZVM-keyvault-1"
+function_tag7               = "region1-dc01-nic"
+function_tag8               = "region1-dc01-vm"
+function_tag9               = "region1-fw01-pip"
+#Resource Groups and Location
 azure-rg-1                  = "region1-eastus2-hub"
 azure-rg-2                  = "region1-eastus2-spoke"
 loc1                        = "eastus2"
+#VNet and Peering Configuration
 region1-vnet1-name          = "region1-vnet1-hub"
 region1-vnet2-name          = "region1-vnet1-spoke"
 region1-vnet1-address-space = "10.0.0.0/16"
 region1-vnet2-address-space = "10.1.0.0/16"
 region1-vnet1-snet1-name    = "region1-vnet1-snet-1"
 region1-vnet1-snetfw-name   = "AzureFirewallSubnet"
-/*
-region1-vnet1-snet2-name    = "region1-vnet1-snet-infra2"
-region1-vnet1-snet3-name    = "region1-vnet1-snet-infra3"
-*/
 region1-vnet2-snet1-name    = "region1-vnet2-snet-1"
 region1-vnet2-snet2-name    = "region1-vnet2-snet-2"
 region1-vnet2-snet3-name    = "region1-vnet2-snet-3"
 region1-vnet1-snet1-range   = "10.0.1.0/24"
 region1-vnet1-snetfw-range  = "10.0.254.0/24"
-/*
-region1-vnet1-snet2-range   = "10.10.2.0/24"
-region1-vnet1-snet3-range   = "10.10.3.0/24"
-*/
 region1-vnet2-snet1-range   = "10.1.1.0/24"
 region1-vnet2-snet2-range   = "10.1.2.0/24"
 region1-vnet2-snet3-range   = "10.1.3.0/24"
-region1-spoke-address-space = "10.1.1.0/24"
+#region1-spoke-address-space = "10.1.1.0/24"
+#VM Configuration
+region1-dc01-vm-name        = "region1-dc01-vm"
 vmsize-domaincontroller     = "Standard_D2s_v4"
 adminusername               = "labadmin"
+region1-dc01-nic-ip         = "10.1.1.4"
+region1-dc01-nic-name       = "region1-dc01-nic"
+region1-dc01-ipconfig-name  = "region1-dc01-ipconfig"
+AZVM-dc01-setup-name        = "AZVM-dc01-setup"
+#Network Security Group
+nsg-name                     = "region1-nsg"
+nsg-rule-name                = "RDP-IN"
+nsg-rule-source              = "10.0.254.0/24"
+#Key Vault Configuration
+keyvault-name               = "keyvault"
+vmpassword-expiration-date  = "2022-12-30T20:00:00Z"
+kvacl-ip-rules              = "100.36.116.75"
+kvsecret-name               = "vmpassword"
+#Azure Firewall Configuration
+fw01-pip-name               = "region1-fw01-pip"
+fw01-name                   = "region1-fw01"
+fw01-ipconfig-name          = "fw-ipconfig"
+fw01-collection-name        = "RDP"
+fw01-rule-name              = "RDP-In"
